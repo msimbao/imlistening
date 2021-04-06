@@ -6,6 +6,12 @@ body {
   background:#fff;
 }
 
+.ui-page{
+background-color: #cf1f3f;
+background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
 h1 {
   font-style: italic;
   color: #373fff;
@@ -18,7 +24,6 @@ h1 {
   height: 500px;
   position: relative;
   list-style-type: none;
-  border:2px solid black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -33,8 +38,8 @@ h1 {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   color: #fff;
   padding: 20px;
-  width: 360px;
-  height: 360px;
+  width: 250px;
+  height: 450px;
   top: 50px;
   left: 50px;
   position: absolute;
@@ -57,9 +62,9 @@ h1 {
   z-index: 10;
 }
 .avatar {
-  background: #fff;
-  width: 340px;
-  height: 340px;
+  background: #000;
+  width: 240px;
+  height: 440px;
   display: block;
   margin-top: 10px;
   margin-left: 10px;
