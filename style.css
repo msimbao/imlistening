@@ -3,7 +3,7 @@
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
-  background:#cf536d;
+  background:#fff;
 }
 
 h1 {
@@ -18,6 +18,7 @@ h1 {
   height: 500px;
   position: relative;
   list-style-type: none;
+  border:2px solid black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -56,7 +57,7 @@ h1 {
   z-index: 10;
 }
 .avatar {
-  background: #222;
+  background: #fff;
   width: 340px;
   height: 340px;
   display: block;
