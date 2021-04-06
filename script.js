@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  
+    $()
 
     $(".buddy").on("swiperight",function(){
       if ( $(this).is(':last-child') ) {
@@ -20,3 +22,4 @@ $(document).ready(function(){
   });
 
 });
+

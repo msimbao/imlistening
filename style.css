@@ -66,9 +66,9 @@ h1 {
   z-index: 10;
 }
 .avatar {
-  background: #fff;
   width: 240px;
   height: 440px;
+  padding:50px 0px 50px 0px;
   display: block;
   margin-top: 10px;
   margin-left: 10px;
