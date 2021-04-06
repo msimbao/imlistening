@@ -1,5 +1,7 @@
 /* CSS files add styling rules to your content */
 
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
