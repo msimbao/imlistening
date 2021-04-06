@@ -1,10 +1,26 @@
-/* If you're feeling fancy you can add interactivity 
-    to your site with Javascript */
+$(document).ready(function(){
 
-// prints "hi" in the browser's dev tools console
-console.log("hi");
+    $(".buddy").on("swiperight",function(){
+      $(this).addClass('rotate-left').delay(300).fadeOut(1);
+      $('.buddy').find('.status').remove();
+     
+      if ( $(this).is(':last-child') ) {
+        $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+       } else {
+          $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
+       }
+    });  
 
-  var emblaNode = document.querySelector('.embla')
-  var options = { loop: false }
+   $(".buddy").on("swipeleft",function(){
+    $(this).addClass('rotate-right').delay(300).fadeOut(1);
+    $('.buddy').find('.status').remove();
 
-  var embla = EmblaCarousel(emblaNode, options)
+    if ( $(this).is(':last-child') ) {
+     $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+      alert('OUPS');
+     } else {
+        $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
+    } 
+  });
+
+});
