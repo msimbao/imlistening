@@ -3,3 +3,8 @@
 
 // prints "hi" in the browser's dev tools console
 console.log("hi");
+
+  var emblaNode = document.querySelector('.embla')
+  var options = { loop: false }
+
+  var embla = EmblaCarousel(emblaNode, options)
