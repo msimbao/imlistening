@@ -1,12 +1,14 @@
 /* CSS files add styling rules to your content */
 
-@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Grand+Hotel&family=Pacifico&family=Sue+Ellen+Francisco&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Bungee&family=Finger+Paint&family=Press+Start+2P&family=Sofia&display=swap');
 
 body {
 font-family: 'Sue Ellen Francisco', cursive;
   background:#fff;
-  
+  color:#555;
 }
 
 .ui-page{
@@ -16,8 +18,9 @@ background-image: url("https://www.transparenttextures.com/patterns/skulls.png")
 }
 
 h1 {
-  color: #555;
+      font-family: 'Sofia', cursive;
 }
+
 
 #container {
   width: 500px;
@@ -38,7 +41,6 @@ h1 {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  color: #fff;
   padding: 20px;
   width: 250px;
   height: 450px;
