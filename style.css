@@ -3,6 +3,7 @@
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
+  background:
 }
 
 h1 {
@@ -11,13 +12,23 @@ h1 {
 }
 
 .embla {
+  position:absolute;
   overflow: hidden;
+  width:250px;
+  height:400px;
+  left:50%;
+  top:50%;
+  transform:translateX(-50%) translateY(-50%);
 }
 .embla__container {
   display: flex;
 }
 .embla__slide {
+  background:white;
   position: relative;
   flex: 0 0 100%;
-  border:2px solid black;
+  height:400px;
+  border-radius:5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
 }
