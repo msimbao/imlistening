@@ -8,7 +8,7 @@ body {
 
 .ui-page{
 background-color: #cf1f3f;
-background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
@@ -62,7 +62,7 @@ h1 {
   z-index: 10;
 }
 .avatar {
-  background: #000;
+  background: #fff;
   width: 240px;
   height: 440px;
   display: block;
