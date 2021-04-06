@@ -1,10 +1,10 @@
 /* CSS files add styling rules to your content */
 
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Grand+Hotel&family=Pacifico&family=Sue+Ellen+Francisco&display=swap');
+
 
 body {
-  font-family: 'Gochi Hand', cursive;
-  margin: 2em;
+font-family: 'Sue Ellen Francisco', cursive;
   background:#fff;
   
 }
@@ -16,8 +16,7 @@ background-image: url("https://www.transparenttextures.com/patterns/skulls.png")
 }
 
 h1 {
-  font-style: italic;
-  color: #373fff;
+  color: #555;
 }
 
 #container {
