@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
 
 body {
-  font-family: helvetica, arial, sans-serif;
+  font-family: 'Gochi Hand', cursive;
   margin: 2em;
   background:#fff;
+  
 }
 
 .ui-page{
