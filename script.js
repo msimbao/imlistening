@@ -55,7 +55,7 @@ var app = new Vue({
           image: image,
           question: question,
         };
-        this.entries[i] = obj;
+        app.entries[i] = obj;
       }
       return this.entries;
     },
@@ -92,7 +92,7 @@ var app = new Vue({
   */
 
 $(document).ready(function() {
-  $();
+  setInterval(function(){ app.shuffle() }, 3000);
 
   $(".buddy").on("swiperight", function() {
     if ($(this).is(":last-child")) {
