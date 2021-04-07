@@ -55,8 +55,8 @@ $(document).ready(function(){
       else if( $(this).is('#questionHolder') ) {
         var text = $('textarea#question').val();
         firebase.database().ref().push(text)
-        $(this).addClass('rotate-left').delay(300).fadeOut(1);
-        $(this).next().removeClass('rotate-left rotate-right').fadeIn(300);
+        // $(this).addClass('rotate-left').delay(300).fadeOut(1);
+        // $(this).next().removeClass('rotate-left rotate-right').fadeIn(300);
       }
       else{
         $(this).addClass('rotate-left').delay(300).fadeOut(1);
