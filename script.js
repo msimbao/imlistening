@@ -73,7 +73,6 @@ var app = new Vue({
   created: function() {
     this.images = images;
     this.loadData();
-    this.shuffle();
   },
   watch: {
   updateEntries() {
@@ -96,12 +95,11 @@ $(document).ready(function() {
   $();
 
   $(".buddy").on("swiperight", function() {
-    app.shuffle();
     if ($(this).is(":last-child")) {
       alert("This is the Last card :(");
     } else if ($(this).is(":first-child")) {
       app.shuffle();
-      alert("shuffled");
+      console.log("shuffled")
       $(this)
         .addClass("rotate-left")
         .delay(300)
