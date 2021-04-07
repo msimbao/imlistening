@@ -43,8 +43,8 @@ Vue.component("card-item", {
   template:
     '<div class="buddy">' +
     '<div class="avatar" style="display: block;">' +
-    '<img :src="card.image" >' +
-    "<h3>{{card.words}}</h3>" +
+    '<img :src="card.image" width="100%">' +
+    "<h3> {card.words} </h3>" +
     "</div>" +
     "</div>"
 });
@@ -62,6 +62,7 @@ var app = new Vue({
         var imageItem = this.images[Math.floor(Math.random() * this.images.length)];
         var wordsItem = this.questions[Math.floor(Math.random() * this.questions.length)];
         var obj = {
+          id: i,
           image: imageItem,
           words: wordsItem
         };
@@ -89,6 +90,7 @@ $(document).ready(function() {
   $();
 
   $(".buddy").on("swiperight", function() {
+    app.shuffle()
     if ($(this).is(":last-child")) {
       alert("This is the Last card :(");
     }
@@ -101,8 +103,8 @@ $(document).ready(function() {
         .database()
         .ref()
         .push(text);
-      // $(this).addClass('rotate-left').delay(300).fadeOut(1);
-      // $(this).next().removeClass('rotate-left rotate-right').fadeIn(300);
+      $(this).addClass('rotate-left').delay(300).fadeOut(1);
+      $(this).next().removeClass('rotate-left rotate-right').fadeIn(300);
     } else {
       $(this)
         .addClass("rotate-left")
