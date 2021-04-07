@@ -51,7 +51,11 @@ $(document).ready(function(){
     $(".buddy").on("swiperight",function(){
       if ( $(this).is(':last-child') ) {
       alert("last Child Reached")
-      } else{
+      }
+      else if( $(this).is('#questionHolder') ) {
+        
+      }
+      else{
         $(this).addClass('rotate-left').delay(300).fadeOut(1);
         $(this).next().removeClass('rotate-left rotate-right').fadeIn(300);
       }
