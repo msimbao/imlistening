@@ -38,7 +38,7 @@ var app = new Vue({
   data: {
     images: [], // Array To Hold Images
     questions: [], // Array To Hold Questions
-    entries: [] // Array to hold card data which is are shuffled combinations of 7 words and 7 images
+    cards: [] // Array to hold card data which is are shuffled combinations of 7 words and 7 images
   },
   methods: {
     shuffle: function() {
@@ -55,9 +55,8 @@ var app = new Vue({
           image: image,
           question: question,
         };
-        app.entries[i] = obj;
+        this.cards[i] = obj;
       }
-      return this.entries;
     },
     loadData: function() {
       firebase
@@ -67,18 +66,15 @@ var app = new Vue({
           const data = snapshot.val();
           const questionsData = Object.values(data);
           this.questions = questionsData;
+          this.shuffle();
         });
+      
     }
   },
   created: function() {
     this.images = images;
     this.loadData();
-  },
-  watch: {
-  updateEntries() {
-    this.entries = this.shuffle();
   }
-}
 });
 
 /**
