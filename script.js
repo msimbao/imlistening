@@ -75,7 +75,8 @@ var app = new Vue({
 $(document).ready(function() {
   $(".buddy").on("swiperight", function() {
     if ($(this).is(":last-child")) {
-      alert("This is the Last card :(");
+      app.shuffle();
+      $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
     } else if ($(this).is(":first-child")) {
       $(this)
         .addClass("rotate-left")
