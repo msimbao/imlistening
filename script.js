@@ -36,7 +36,7 @@ Vue.component("card-item", {
 var app = new Vue({
   el: "#app",
   data: {
-    images: images, // Array To Hold Images
+    images: [], // Array To Hold Images
     questions: [], // Array To Hold Questions
     entries: [] // Array to hold card data which is are shuffled combinations of 7 words and 7 images
   },
@@ -57,6 +57,7 @@ var app = new Vue({
         };
         this.entries[i] = obj;
       }
+      return this.entries;
     },
     loadData: function() {
       firebase
@@ -70,9 +71,15 @@ var app = new Vue({
     }
   },
   created: function() {
+    this.images = images;
     this.loadData();
     this.shuffle();
+  },
+  watch: {
+  updateEntries() {
+    this.entries = this.shuffle();
   }
+}
 });
 
 /**
@@ -95,7 +102,14 @@ $(document).ready(function() {
     } else if ($(this).is(":first-child")) {
       app.shuffle();
       alert("shuffled");
-      
+      $(this)
+        .addClass("rotate-left")
+        .delay(300)
+        .fadeOut(1);
+      $(this)
+        .next()
+        .removeClass("rotate-left rotate-right")
+        .fadeIn(300);
     } else if ($(this).is("#questionHolder")) {
       var text = $("textarea#question").val();
       firebase
