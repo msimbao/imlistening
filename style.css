@@ -80,3 +80,16 @@ h1 {
 .ui-btn:hover{
   background:#cf4365
 }
+
+textarea{
+    height: 123px;
+    resize: none;
+    width: 85%;
+    margin: 0px 0px 10px 0px;
+    border: none;
+    border: 1px solid #c64365;
+    color: #c64365;
+    font-family: inherit;
+    font-size: 1.3em;
+    padding: 10px;
+}
