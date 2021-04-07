@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>I'm Listening</title>
+    <title>I'm Listening - Digital Talking Cards</title>
     
     <!-- Site Favicon -->
     <link
@@ -14,14 +14,11 @@
       type="image/x-icon"
     />
 
+    <!-- Jquery CSS -->
     <link
       rel="stylesheet"
       href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css"
     />
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js" integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo=" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -41,10 +38,10 @@
               I'm Listening
             </h1>
             <h2>
-              A Digital Card Game
+              Digital Conversation Cards
             </h2>
             <h3 style="color:#c64365">
-              Swipe the bottom to start!
+              Swipe the bottom of this card!
             </h3>  
           </div>
         </div>
@@ -80,13 +77,13 @@
               All Done!
             </h1>
             <h2>
-              You can refresh this page to shuffle a new set of questions
+              You can swipe <b style="color:#c64365">left</b> to shuffle the cards and get new questions.
             </h2>
             <h2>
-              Or add your own question to the pool to make future rounds more interesting in the future for others and yourself
+              Or swipe  <b style="color:#c64365">right</b> to add your own questions to the mix to make future rounds more interesting.
             </h2>
             <h2 style="color:#c64365">
-              Swipe this card to add a question!
+              Thanks for playing!
             </h2>
           </div>
         </div>
@@ -110,6 +107,14 @@
         </div>
       </div>
     </div>
+    
+    <!-- Jquery Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js" integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo=" crossorigin="anonymous"></script>
+    
+    <!-- Vue Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
@@ -131,7 +136,7 @@
       firebase.initializeApp(firebaseConfig);
     </script>
 
-    <!-- import the webpage's javascript file -->
+    <!-- import the webpage's javascript files -->
     <script src="/images.js" defer></script>
     <script src="/script.js" defer></script>
   </body>
