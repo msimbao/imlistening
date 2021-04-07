@@ -8,23 +8,7 @@
  *
  */
 
-/**
-  * //////////////////////////////////////
 
-    FIREBASE
-                    
-  * //////////////////////////////////////
-  */
-
-firebase
-  .database()
-  .ref()
-  .once("value", snapshot => {
-    const data = snapshot.val();
-    const questionsData = Object.values(data);
-    // console.log(questionsData);
-    app.questions = questionsData;
-  });
 /**
   * //////////////////////////////////////
 
@@ -44,7 +28,7 @@ Vue.component("card-item", {
     '<div class="buddy">' +
     '<div class="avatar" style="display: block;">' +
     '<img :src="card.image" width="100%">' +
-    "<h3> {card.words} </h3>" +
+    "<h3> {{card.question}} </h3>" +
     "</div>" +
     "</div>"
 });
@@ -59,21 +43,36 @@ var app = new Vue({
   methods: {
     shuffle: function() {
       for (i = 0; i < 7; i++) {
-        var imageItem = this.images[Math.floor(Math.random() * this.images.length)];
-        var wordsItem = this.questions[Math.floor(Math.random() * this.questions.length)];
+        
+        var image = this.images[
+          Math.floor(Math.random() * this.images.length)
+        ];
+        var question = this.questions[
+          Math.floor(Math.random() * this.questions.length)
+        ];
         var obj = {
           id: i,
-          image: imageItem,
-          words: wordsItem
+          image: image,
+          question: question,
         };
         this.entries[i] = obj;
       }
+    },
+    loadData: function() {
+      firebase
+        .database()
+        .ref()
+        .once("value", snapshot => {
+          const data = snapshot.val();
+          const questionsData = Object.values(data);
+          this.questions = questionsData;
+        });
     }
   },
-   created: function () {
-     this.shuffle()
-   }
-  
+  created: function() {
+    this.loadData();
+    this.shuffle();
+  }
 });
 
 /**
@@ -90,21 +89,27 @@ $(document).ready(function() {
   $();
 
   $(".buddy").on("swiperight", function() {
-    app.shuffle()
+    app.shuffle();
     if ($(this).is(":last-child")) {
       alert("This is the Last card :(");
-    }
-    else if ($(this).is(":first-child")) {
-      app.shuffle()
-    }
-    else if ($(this).is("#questionHolder")) {
+    } else if ($(this).is(":first-child")) {
+      app.shuffle();
+      alert("shuffled");
+      
+    } else if ($(this).is("#questionHolder")) {
       var text = $("textarea#question").val();
       firebase
         .database()
         .ref()
         .push(text);
-      $(this).addClass('rotate-left').delay(300).fadeOut(1);
-      $(this).next().removeClass('rotate-left rotate-right').fadeIn(300);
+      $(this)
+        .addClass("rotate-left")
+        .delay(300)
+        .fadeOut(1);
+      $(this)
+        .next()
+        .removeClass("rotate-left rotate-right")
+        .fadeIn(300);
     } else {
       $(this)
         .addClass("rotate-left")
