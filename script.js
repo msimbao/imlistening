@@ -1,3 +1,49 @@
+
+/**
+ *
+ *  @Title script.js
+ *
+ *  @Brief JavaScript For holding functions that handle the client
+ *
+ *  @Author Mphatso 
+ *
+ */
+
+
+/**
+  * //////////////////////////////////////
+
+    VUE
+                    
+  * //////////////////////////////////////
+  */
+
+var app = new Vue({
+  el: "#app",
+  data: {
+    images: [],  // Array To Hold Images
+    questions: []. // Array To Hold Questions
+  },
+})
+
+/**
+  * //////////////////////////////////////
+ __      __         
+   CARD SWIPE
+   
+   Original Code by @developingidea
+                    
+  * //////////////////////////////////////
+  */
+
+/**
+  * //////////////////////////////////////
+
+    FIREBASE
+                    
+  * //////////////////////////////////////
+  */
+
 $(document).ready(function(){
   
     $()
