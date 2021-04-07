@@ -8,7 +8,6 @@
  *
  */
 
-
 /**
   * //////////////////////////////////////
 
@@ -28,11 +27,19 @@ Vue.component("card-item", {
     '<div class="buddy">' +
     '<div class="avatar" style="display: block;">' +
     '<img :src="card.image" width="100%">' +
-    "<h3> {{card.question}} </h3>" +
+    "<h1> {{card.question}} </h1>" +
     "</div>" +
     "</div>"
 });
 
+firebase
+  .database()
+  .ref()
+  .once("value", snapshot => {
+    const data = snapshot.val();
+    const questionsData = Object.values(data);
+
+  
 var app = new Vue({
   el: "#app",
   data: {
@@ -43,59 +50,33 @@ var app = new Vue({
   methods: {
     shuffle: function() {
       for (i = 0; i < 7; i++) {
-        
-        var image = this.images[
-          Math.floor(Math.random() * this.images.length)
-        ];
+        var image = this.images[Math.floor(Math.random() * this.images.length)];
         var question = this.questions[
           Math.floor(Math.random() * this.questions.length)
         ];
         var obj = {
           id: i,
           image: image,
-          question: question,
+          question: question
         };
         this.cards[i] = obj;
       }
-    },
-    loadData: function() {
-      firebase
-        .database()
-        .ref()
-        .once("value", snapshot => {
-          const data = snapshot.val();
-          const questionsData = Object.values(data);
-          this.questions = questionsData;
-          this.shuffle();
-        });
-      
     }
   },
   created: function() {
     this.images = images;
-    this.loadData();
+    this.questions = questionsData;
+    this.shuffle();
+
   }
 });
-
-/**
-  * //////////////////////////////////////
- __      __         
-   CARD SWIPE
-   
-   Original Code by @developingidea
-                    
-  * //////////////////////////////////////
-  */
-
+  
+  
 $(document).ready(function() {
-  setInterval(function(){ app.shuffle() }, 3000);
-
   $(".buddy").on("swiperight", function() {
     if ($(this).is(":last-child")) {
       alert("This is the Last card :(");
     } else if ($(this).is(":first-child")) {
-      app.shuffle();
-      console.log("shuffled")
       $(this)
         .addClass("rotate-left")
         .delay(300)
@@ -145,6 +126,22 @@ $(document).ready(function() {
     }
   });
 });
+
+  
+  });
+
+
+
+
+/**
+  * //////////////////////////////////////
+ __      __         
+   CARD SWIPE
+   
+   Original Code by @developingidea
+                    
+  * //////////////////////////////////////
+  */
 
 /**
   * //////////////////////////////////////
