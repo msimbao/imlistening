@@ -34,10 +34,50 @@ firebase.database().ref().once('value', (snapshot) => {
   * //////////////////////////////////////
   */
 
+/** 
+* @name card-item
+* @brief Component For Shuffle-able card items
+*/
+
+       <div class="buddy">
+          <div class="avatar" style="display: block;">
+            <h1>
+              Thank You!
+            </h1>
+            <h2>
+              Your contribution will enrich the lives of other players!
+            </h2>
+          </div>
+        </div>
+
+Vue.component("card", {
+  props: ["card"],
+  template:
+    '<div class="buddy"'+
+    '<div class="avatar" style="display: block;">'+
+    ''
+    '<h3>{{card.words}}</h3>'
+    '<a :href="feed.url" target="_blank" rel="noopener noreferrer">' +
+    '<transition name="fade">' +
+    '<div class="newsItem card">' +
+    '<div class="newsImageHolder">' +
+    '<img :src="card.image" >' +
+    "</div>" +
+    '<div class="articleWords">' +
+    "<h4>{{feed.title}}</h4>" +
+    '<p>"{{feed.description}}..."</p>' +
+    "<h6>{{feed.author}}</h6>" +
+    "</div>" +
+    '<img class="teamImage" :src="feed.teamLogo">' +
+    "</div>" +
+    "</transition>" +
+    "</a>",
+});
+
 var app = new Vue({
   el: "#app",
   data: {
-    images: [],  // Array To Hold Images
+    images: images,  // Array To Hold Images
     questions: [] // Array To Hold Questions
   }
 })
