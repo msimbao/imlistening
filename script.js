@@ -13,6 +13,22 @@
 /**
   * //////////////////////////////////////
 
+    FIREBASE
+                    
+  * //////////////////////////////////////
+  */
+
+
+
+firebase.database().ref().once('value', (snapshot) => {
+  const data = snapshot.val();
+  const questionsData = Object.values(data);
+  console.log(questionsData)
+  app.questions = questionsData;
+});
+/**
+  * //////////////////////////////////////
+
     VUE
                     
   * //////////////////////////////////////
@@ -36,13 +52,6 @@ var app = new Vue({
   * //////////////////////////////////////
   */
 
-/**
-  * //////////////////////////////////////
-
-    FIREBASE
-                    
-  * //////////////////////////////////////
-  */
 
 $(document).ready(function(){
   
@@ -76,3 +85,11 @@ $(document).ready(function(){
 
 });
 
+
+/**
+  * //////////////////////////////////////
+
+    IMAGES URLS
+                    
+  * //////////////////////////////////////
+  */
