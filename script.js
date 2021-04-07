@@ -75,17 +75,7 @@ var app = new Vue({
 $(document).ready(function() {
   $(".buddy").on("swiperight", function() {
     if ($(this).is(":last-child")) {
-      app.shuffle();
       $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-    } else if ($(this).is(":first-child")) {
-      $(this)
-        .addClass("rotate-left")
-        .delay(300)
-        .fadeOut(1);
-      $(this)
-        .next()
-        .removeClass("rotate-left rotate-right")
-        .fadeIn(300);
     } else if ($(this).is("#questionHolder")) {
       var text = $("textarea#question").val();
       firebase
@@ -100,7 +90,7 @@ $(document).ready(function() {
         .next()
         .removeClass("rotate-left rotate-right")
         .fadeIn(300);
-    } else {
+      } else {
       $(this)
         .addClass("rotate-left")
         .delay(300)
@@ -114,8 +104,22 @@ $(document).ready(function() {
 
   $(".buddy").on("swipeleft", function() {
     if ($(this).is(":last-child")) {
-      alert("last Child Reached");
-    } else {
+        $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+    } else if ($(this).is("#questionHolder")) {
+      var text = $("textarea#question").val();
+      firebase
+        .database()
+        .ref()
+        .push(text);
+      $(this)
+        .addClass("rotate-left")
+        .delay(300)
+        .fadeOut(1);
+      $(this)
+        .next()
+        .removeClass("rotate-left rotate-right")
+        .fadeIn(300);
+      }else {
       $(this)
         .addClass("rotate-right")
         .delay(300)

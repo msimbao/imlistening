@@ -19,6 +19,11 @@
       rel="stylesheet"
       href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css"
     />
+    
+    <!-- Jquery Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js" integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo=" crossorigin="anonymous"></script>
+    
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -71,16 +76,16 @@
                 v-bind:card="card"
                 v-bind:key="card.id">
         </card-item>
-        <div class="buddy">
+        <div class="buddy" id="first_end">
           <div class="avatar" style="display: block;">
             <h1>
               All Done!
             </h1>
             <h2>
-              You can swipe <b style="color:#c64365">left</b> to shuffle the cards and get new questions.
+              You can <b style="color:#c64365">refresh</b> this page to shuffle the cards and get new questions.
             </h2>
             <h2>
-              Or swipe  <b style="color:#c64365">right</b> to add your own questions to the mix to make future rounds more interesting.
+              Or <b style="color:#c64365">swipe</b> this card to add your own questions to the mix to make future rounds more interesting.
             </h2>
             <h2 style="color:#c64365">
               Thanks for playing!
@@ -95,7 +100,7 @@
             </h2>  
           </div>
         </div>
-        <div class="buddy">
+        <div class="buddy" id="second_end">
           <div class="avatar" style="display: block;">
             <h1>
               Thank You!
@@ -103,15 +108,15 @@
             <h2>
               Your contribution will enrich the lives of other players!
             </h2>
+            <h2>
+              Refresh this page if you want to play again!
+            </h2>
           </div>
         </div>
       </div>
     </div>
     
-    <!-- Jquery Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.js" integrity="sha256-c3VbCrdCtTHmXYAuxRT4D0Cy5VC/0zBnXVRIvJiV9xo=" crossorigin="anonymous"></script>
-    
+
     <!-- Vue Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
