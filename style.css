@@ -76,3 +76,7 @@ h1 {
   background-position: center;
  background-repeat: no-repeat;
 }
+
+.ui-btn:hover{
+  background:#cf4365
+}

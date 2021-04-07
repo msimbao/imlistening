@@ -22,8 +22,8 @@ var app = new Vue({
   el: "#app",
   data: {
     images: [],  // Array To Hold Images
-    questions: []. // Array To Hold Questions
-  },
+    questions: [] // Array To Hold Questions
+  }
 })
 
 /**
