@@ -27,7 +27,7 @@ Vue.component("card-item", {
     '<div class="buddy">' +
     '<div class="avatar" style="display: block;">' +
     '<img :src="card.image" width="100%">' +
-    "<h1> {{card.question}} </h1>" +
+    "<h2> {{card.question}} </h2>" +
     "</div>" +
     "</div>"
 });
