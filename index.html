@@ -40,6 +40,12 @@
             <h1 id="introh1">
               I'm Listening
             </h1>
+            <ol>
+              <li v-for="todo in cards">
+                  {{ todo.question }}
+              </li>
+            </ol>
+
             <h2>
               A Digital Card Game
             </h2>
@@ -71,7 +77,7 @@
           </div>
         </div>
         <card-item
-                v-for="card in entries"
+                v-for="card in cards"
                 v-bind:card="card"
                 v-bind:key="card.id">
         </card-item>
